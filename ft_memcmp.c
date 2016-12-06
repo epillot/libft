@@ -6,7 +6,7 @@
 /*   By: epillot <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/07 17:20:28 by epillot           #+#    #+#             */
-/*   Updated: 2016/12/02 12:36:04 by epillot          ###   ########.fr       */
+/*   Updated: 2016/12/06 16:41:25 by epillot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,5 @@ int		ft_memcmp(const void *s1, const void *s2, size_t n)
 		s2++;
 		i++;
 	}
-	return (*((const t_byte*)s1) - *((const t_byte*)s2));
+	return (*((t_byte*)s1) - *((t_byte*)s2));
 }

@@ -6,7 +6,7 @@
 /*   By: epillot <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/07 10:17:48 by epillot           #+#    #+#             */
-/*   Updated: 2016/12/06 12:20:22 by epillot          ###   ########.fr       */
+/*   Updated: 2016/12/06 17:02:48 by epillot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,5 +102,6 @@ void				ft_putwchar(unsigned int c);
 void				ft_putwchar_fd(unsigned int c, int fd);
 void				ft_putwstr_fd(unsigned int *str, int fd);
 void				ft_putwstr(unsigned int *str);
+char				*ft_itoa_base(int n, int base);
 
 #endif

@@ -6,7 +6,7 @@
 #    By: epillot <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/03 15:38:05 by epillot           #+#    #+#              #
-#    Updated: 2016/12/06 12:18:38 by epillot          ###   ########.fr        #
+#    Updated: 2016/12/06 17:03:10 by epillot          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -85,6 +85,7 @@ SRC = ft_atoi.c\
 	  ft_putwchar_fd.c\
 	  ft_putwstr_fd.c\
 	  ft_putwstr.c\
+	  ft_itoa_base.c\
 
 OBJ = $(SRC:.c=.o)
 
