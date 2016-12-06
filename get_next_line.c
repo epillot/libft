@@ -6,7 +6,7 @@
 /*   By: epillot <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/29 14:24:07 by epillot           #+#    #+#             */
-/*   Updated: 2016/12/06 12:29:17 by epillot          ###   ########.fr       */
+/*   Updated: 2016/12/06 12:37:44 by epillot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -116,8 +116,8 @@ int					get_next_line(const int fd, char **line)
 			buf->size_to_add -= size;
 			buf->current_size_line += size;
 			if (buf->to_add)
-				return (buf->current_size_line);
+				return (buf->current_size_line + 1);
 		}
 	}
-	return (buf->current_size_line);
+	return (*line == NULL ? 0 : buf->current_size_line + 1);
 }
