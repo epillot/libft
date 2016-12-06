@@ -6,7 +6,7 @@
 /*   By: epillot <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/07 10:17:48 by epillot           #+#    #+#             */
-/*   Updated: 2016/12/02 15:40:52 by epillot          ###   ########.fr       */
+/*   Updated: 2016/12/06 12:20:22 by epillot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,5 +97,10 @@ char				**ft_split_whitespace(char const *s);
 int					get_next_line(const int fd, char **line);
 void				*ft_print_memory(const void *ptr, size_t size);
 int					ft_abs(int n);
+void				ft_print_bits(unsigned char octet);
+void				ft_putwchar(unsigned int c);
+void				ft_putwchar_fd(unsigned int c, int fd);
+void				ft_putwstr_fd(unsigned int *str, int fd);
+void				ft_putwstr(unsigned int *str);
 
 #endif
