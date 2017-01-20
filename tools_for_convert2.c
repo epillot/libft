@@ -1,31 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   is_format_info.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: epillot <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/04 13:40:10 by epillot           #+#    #+#             */
-/*   Updated: 2016/12/21 17:31:44 by epillot          ###   ########.fr       */
+/*   Created: 2016/12/08 17:38:22 by epillot           #+#    #+#             */
+/*   Updated: 2016/12/23 15:15:52 by epillot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
-char		*ft_strdup(const char *src)
+int	is_flag(const char c)
 {
-	char	*dest;
-	size_t	i;
+	if (c == '#' || c == '0' || c == '-' || c == '+' || c == ' ')
+		return (1);
+	return (0);
+}
 
-	i = 0;
-	dest = ft_strnew(sizeof(char) * ft_strlen(src));
-	if (dest == NULL)
-		return (NULL);
-	while (src[i])
-	{
-		dest[i] = src[i];
-		i++;
-	}
-	dest[i] = '\0';
-	return (dest);
+int	is_length_info(const char c)
+{
+	if (c == 'h' || c == 'l' || c == 'j' || c == 'z')
+		return (1);
+	return (0);
+}
+
+int	is_format_info(const char c)
+{
+	if (is_flag(c) || is_length_info(c)
+			|| ft_isdigit(c) || c == '.' || c == '*')
+		return (1);
+	return (0);
 }

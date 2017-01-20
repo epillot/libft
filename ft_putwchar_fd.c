@@ -6,17 +6,17 @@
 /*   By: epillot <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/06 12:05:28 by epillot           #+#    #+#             */
-/*   Updated: 2016/12/06 16:03:12 by epillot          ###   ########.fr       */
+/*   Updated: 2016/12/20 15:41:56 by epillot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static void	ft_putwchar_11b_fd(unsigned int c, int fd)
+static void	ft_putwchar_11b_fd(wint_t c, int fd)
 {
-	unsigned int	d;
-	unsigned int	e;
-	unsigned int	filtre;
+	wint_t	d;
+	wint_t	e;
+	wint_t	filtre;
 
 	d = 0xc0;
 	e = 0x80;
@@ -27,12 +27,12 @@ static void	ft_putwchar_11b_fd(unsigned int c, int fd)
 	ft_putchar_fd((char)e, fd);
 }
 
-static void	ft_putwchar_16b_fd(unsigned int c, int fd)
+static void	ft_putwchar_16b_fd(wint_t c, int fd)
 {
-	unsigned int	d;
-	unsigned int	e;
-	unsigned int	f;
-	unsigned int	filtre;
+	wint_t	d;
+	wint_t	e;
+	wint_t	f;
+	wint_t	filtre;
 
 	f = 0x80;
 	e = 0x80;
@@ -47,13 +47,13 @@ static void	ft_putwchar_16b_fd(unsigned int c, int fd)
 	ft_putchar_fd((char)f, fd);
 }
 
-static void	ft_putwchar_21b_fd(unsigned int c, int fd)
+static void	ft_putwchar_21b_fd(wint_t c, int fd)
 {
-	unsigned int	d;
-	unsigned int	e;
-	unsigned int	f;
-	unsigned int	g;
-	unsigned int	filtre;
+	wint_t	d;
+	wint_t	e;
+	wint_t	f;
+	wint_t	g;
+	wint_t	filtre;
 
 	g = 0x80;
 	f = 0x80;
@@ -71,7 +71,7 @@ static void	ft_putwchar_21b_fd(unsigned int c, int fd)
 	ft_putchar_fd((char)g, fd);
 }
 
-void		ft_putwchar_fd(unsigned int c, int fd)
+void		ft_putwchar_fd(wint_t c, int fd)
 {
 	if (c <= 0x7f)
 		ft_putchar_fd((char)c, fd);

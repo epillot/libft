@@ -6,13 +6,13 @@
 /*   By: epillot <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/02 14:46:58 by epillot           #+#    #+#             */
-/*   Updated: 2016/12/06 17:04:42 by epillot          ###   ########.fr       */
+/*   Updated: 2016/12/12 15:47:44 by epillot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_itoa(int n)
+char	*ft_itoa(intmax_t n)
 {
 	return (ft_itoa_base(n, 10));
 }

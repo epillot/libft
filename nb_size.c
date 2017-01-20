@@ -1,31 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   get_number_size.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: epillot <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/04 13:40:10 by epillot           #+#    #+#             */
-/*   Updated: 2016/12/21 17:31:44 by epillot          ###   ########.fr       */
+/*   Created: 2017/01/18 18:08:02 by epillot           #+#    #+#             */
+/*   Updated: 2017/01/18 18:11:17 by epillot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char		*ft_strdup(const char *src)
+int		nb_size(intmax_t nb)
 {
-	char	*dest;
-	size_t	i;
+	int	ret;
 
-	i = 0;
-	dest = ft_strnew(sizeof(char) * ft_strlen(src));
-	if (dest == NULL)
-		return (NULL);
-	while (src[i])
+	ret = 1;
+	if (nb < 0)
+		ret++;
+	while (nb >= 10 || nb <= -10)
 	{
-		dest[i] = src[i];
-		i++;
+		nb /= 10;
+		ret++;
 	}
-	dest[i] = '\0';
-	return (dest);
+	return (ret);
 }

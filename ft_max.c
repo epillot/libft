@@ -1,31 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_max.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: epillot <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/04 13:40:10 by epillot           #+#    #+#             */
-/*   Updated: 2016/12/21 17:31:44 by epillot          ###   ########.fr       */
+/*   Created: 2016/12/09 15:17:30 by epillot           #+#    #+#             */
+/*   Updated: 2016/12/09 15:18:39 by epillot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-char		*ft_strdup(const char *src)
+int		ft_max(int a, int b)
 {
-	char	*dest;
-	size_t	i;
-
-	i = 0;
-	dest = ft_strnew(sizeof(char) * ft_strlen(src));
-	if (dest == NULL)
-		return (NULL);
-	while (src[i])
-	{
-		dest[i] = src[i];
-		i++;
-	}
-	dest[i] = '\0';
-	return (dest);
+	return (a >= b ? a : b);
 }

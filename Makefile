@@ -6,7 +6,7 @@
 #    By: epillot <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/03 15:38:05 by epillot           #+#    #+#              #
-#    Updated: 2016/12/06 17:03:10 by epillot          ###   ########.fr        #
+#    Updated: 2017/01/05 18:14:42 by epillot          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -58,6 +58,7 @@ SRC = ft_atoi.c\
 	  ft_strequ.c\
 	  ft_striteri.c\
 	  ft_strjoin.c\
+	  ft_strnjoin.c\
 	  ft_strlen.c\
 	  ft_strlcat.c\
 	  ft_strmap.c\
@@ -73,6 +74,7 @@ SRC = ft_atoi.c\
 	  ft_strstr.c\
 	  ft_strsub.c\
 	  ft_tolower.c\
+	  ft_strupcase.c\
 	  ft_strsplit_lst.c\
 	  ft_toupper.c\
 	  ft_strtrim.c\
@@ -86,6 +88,21 @@ SRC = ft_atoi.c\
 	  ft_putwstr_fd.c\
 	  ft_putwstr.c\
 	  ft_itoa_base.c\
+	  ft_max.c\
+	  c_convert.c\
+	  d_convert.c\
+	  encode_unicode.c\
+	  ft_printf.c\
+	  ft_sprintf.c\
+	  get_option.c\
+	  get_param.c\
+	  s_convert.c\
+	  str_format.c\
+	  tools_for_convert.c\
+	  tools_for_convert2.c\
+	  u_convert.c\
+	  wc_convert.c\
+	  ws_convert.c\
 
 OBJ = $(SRC:.c=.o)
 

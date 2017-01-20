@@ -6,13 +6,13 @@
 /*   By: epillot <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/06 16:04:12 by epillot           #+#    #+#             */
-/*   Updated: 2016/12/06 17:02:23 by epillot          ###   ########.fr       */
+/*   Updated: 2016/12/12 21:12:33 by epillot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	get_itoa_size(int n, int base)
+static int	get_itoa_size(intmax_t n, int base)
 {
 	int size;
 
@@ -27,7 +27,7 @@ static int	get_itoa_size(int n, int base)
 	return (size);
 }
 
-char		*ft_itoa_base(int n, int base)
+char		*ft_itoa_base(intmax_t n, int base)
 {
 	int		i;
 	int		size;

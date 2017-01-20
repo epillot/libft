@@ -6,13 +6,13 @@
 /*   By: epillot <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/06 12:15:02 by epillot           #+#    #+#             */
-/*   Updated: 2016/12/06 12:17:52 by epillot          ###   ########.fr       */
+/*   Updated: 2016/12/20 13:31:36 by epillot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putwstr_fd(unsigned int *str, int fd)
+void	ft_putwstr_fd(wint_t *str, int fd)
 {
 	while (*str)
 	{

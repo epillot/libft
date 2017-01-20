@@ -6,7 +6,7 @@
 /*   By: epillot <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/29 14:24:07 by epillot           #+#    #+#             */
-/*   Updated: 2016/12/06 12:37:44 by epillot          ###   ########.fr       */
+/*   Updated: 2016/12/06 18:13:17 by epillot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,8 @@ static t_buffer		*get_buffer(t_buffer *buf, const int fd)
 		buf = buf->next;
 	if (buf->fd != fd)
 	{
-		new = create_buf(fd);
+		if ((new = create_buf(fd)) == NULL)
+			return (NULL);
 		new->prev = buf;
 		buf->next = new;
 		return (new);

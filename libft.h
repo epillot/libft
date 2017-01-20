@@ -6,7 +6,7 @@
 /*   By: epillot <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/07 10:17:48 by epillot           #+#    #+#             */
-/*   Updated: 2016/12/06 17:02:48 by epillot          ###   ########.fr       */
+/*   Updated: 2017/01/04 19:41:48 by epillot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@
 # include <string.h>
 # include <stdlib.h>
 # include <unistd.h>
-
-# define ABS(Value) (Value >= 0 ? Value : -Value)
+# include <wchar.h>
+# include "ft_printf.h"
 
 typedef unsigned char	t_byte;
 
@@ -42,7 +42,6 @@ char				*ft_strncpy(char *dst, const char *src, size_t len);
 char				*ft_strrchr(const char *s, int c);
 char				*ft_strstr(const char *big, const char *little);
 void				ft_strclr(char *s);
-void				ft_init(void *ptr, size_t size);
 void				*ft_memalloc(size_t size);
 void				ft_memdel(void **ap);
 char				*ft_strnew(size_t size);
@@ -63,6 +62,7 @@ int					ft_isascii(int c);
 int					ft_isprint(int c);
 int					ft_toupper(int c);
 int					ft_tolower(int c);
+char				*ft_strupcase(char *s);
 void				ft_striter(char *s, void (*f)(char *));
 void				ft_striteri(char *s, void (*f)(unsigned int, char *));
 char				*ft_strmap(char const *s, char (*f)(char));
@@ -72,8 +72,9 @@ int					ft_strnequ(char const *s1, char const *s2, size_t n);
 char				*ft_strsub(char const *s, unsigned int start, size_t len);
 char				*ft_strtrim(char const *s);
 char				*ft_strjoin(char const *s1, char const *s2);
+char				*ft_strnjoin(char const *s1, char const *s2, int n, int m);
 char				**ft_strsplit(char const *s, char c);
-char				*ft_itoa(int n);
+char				*ft_itoa(intmax_t n);
 void				ft_putchar(char c);
 void				ft_putnchar(char c, int n);
 void				ft_putstr(char const *s);
@@ -98,10 +99,11 @@ int					get_next_line(const int fd, char **line);
 void				*ft_print_memory(const void *ptr, size_t size);
 int					ft_abs(int n);
 void				ft_print_bits(unsigned char octet);
-void				ft_putwchar(unsigned int c);
-void				ft_putwchar_fd(unsigned int c, int fd);
-void				ft_putwstr_fd(unsigned int *str, int fd);
-void				ft_putwstr(unsigned int *str);
-char				*ft_itoa_base(int n, int base);
+void				ft_putwchar(wint_t c);
+void				ft_putwchar_fd(wint_t c, int fd);
+void				ft_putwstr_fd(wint_t *str, int fd);
+void				ft_putwstr(wint_t *str);
+char				*ft_itoa_base(intmax_t n, int base);
+int					ft_max(int a, int b);
 
 #endif
