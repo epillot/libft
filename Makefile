@@ -6,7 +6,7 @@
 #    By: epillot <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/03 15:38:05 by epillot           #+#    #+#              #
-#    Updated: 2017/01/25 15:29:40 by epillot          ###   ########.fr        #
+#    Updated: 2017/01/25 16:42:55 by epillot          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -148,40 +148,40 @@ OBJ = $(addprefix $(OBJ_PATH), $(OBJ_NAME))
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	ar rc $(NAME) $(OBJ)
-	ranlib $(NAME)
+	@ar rc $(NAME) $(OBJ)
+	@ranlib $(NAME)
 
 $(OBJ_PATH)%.o: $(SRC_STR_PATH)%.c
 	@mkdir -p obj
-	gcc $(FLAG) -c -I $(INC) $< -o $@
+	@gcc $(FLAG) -c -I $(INC) $< -o $@
 
 $(OBJ_PATH)%.o: $(SRC_FTPF_PATH)%.c
 	@mkdir -p obj
-	gcc $(FLAG) -c -I $(INC) $< -o $@
+	@gcc $(FLAG) -c -I $(INC) $< -o $@
 
 $(OBJ_PATH)%.o: $(SRC_CHAR_PATH)%.c
 	@mkdir -p obj
-	gcc $(FLAG) -c -I $(INC) $< -o $@
+	@gcc $(FLAG) -c -I $(INC) $< -o $@
 
 $(OBJ_PATH)%.o: $(SRC_LST_PATH)%.c
 	@mkdir -p obj
-	gcc $(FLAG) -c -I $(INC) $< -o $@
+	@gcc $(FLAG) -c -I $(INC) $< -o $@
 
 $(OBJ_PATH)%.o: $(SRC_MEM_PATH)%.c
 	@mkdir -p obj
-	gcc $(FLAG) -c -I $(INC) $< -o $@
+	@gcc $(FLAG) -c -I $(INC) $< -o $@
 
 $(OBJ_PATH)%.o: $(SRC_INT_PATH)%.c
 	@mkdir -p obj
-	gcc $(FLAG) -c -I $(INC) $< -o $@
+	@gcc $(FLAG) -c -I $(INC) $< -o $@
 
 $(OBJ_PATH)%.o: $(SRC_GNL_PATH)%.c
 	@mkdir -p obj
-	gcc $(FLAG) -c -I $(INC) $< -o $@
+	@gcc $(FLAG) -c -I $(INC) $< -o $@
 
 $(OBJ_PATH)%.o: $(SRC_OUT_PATH)%.c
 	@mkdir -p obj
-	gcc $(FLAG) -c -I $(INC) $< -o $@
+	@gcc $(FLAG) -c -I $(INC) $< -o $@
 
 clean:
 	/bin/rm -f $(OBJ)

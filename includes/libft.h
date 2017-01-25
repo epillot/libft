@@ -6,7 +6,7 @@
 /*   By: epillot <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/07 10:17:48 by epillot           #+#    #+#             */
-/*   Updated: 2017/01/25 15:32:55 by epillot          ###   ########.fr       */
+/*   Updated: 2017/01/25 16:08:45 by epillot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,5 +105,6 @@ void				ft_putwstr_fd(wint_t *str, int fd);
 void				ft_putwstr(wint_t *str);
 char				*ft_itoa_base(intmax_t n, int base);
 int					ft_max(int a, int b);
+int					nb_size(intmax_t nb);
 
 #endif
