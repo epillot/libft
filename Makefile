@@ -6,7 +6,7 @@
 #    By: epillot <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/03 15:38:05 by epillot           #+#    #+#              #
-#    Updated: 2017/01/25 16:42:55 by epillot          ###   ########.fr        #
+#    Updated: 2017/02/08 19:57:28 by epillot          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,6 +15,7 @@ NAME = libft.a
 FLAG = -Wall -Wextra -Werror
 
 SRC_STR_NAME = 	ft_atoi.c\
+				ft_atol.c\
 				ft_strcat.c\
 				ft_strclr.c\
 				ft_strchr.c\
@@ -78,6 +79,11 @@ SRC_LST_NAME =	ft_lstadd.c\
 				ft_lstdel.c\
 				ft_lstnew.c\
 				ft_lstmap.c\
+				ft_lst_size.c\
+				ft_lst_at.c\
+				ft_lst_swap_cnt.c\
+				ft_lst_insert.c\
+				ft_lstfree_cnt.c\
 
 SRC_MEM_NAME =	ft_bzero.c\
 				ft_memalloc.c\
@@ -145,11 +151,13 @@ OBJ_PATH = obj/
 
 OBJ = $(addprefix $(OBJ_PATH), $(OBJ_NAME))
 			
-all: $(NAME)
-
 $(NAME): $(OBJ)
+	@echo "\033[35mmaking $(NAME)...\033[0m"
 	@ar rc $(NAME) $(OBJ)
 	@ranlib $(NAME)
+	@echo "\033[32mdone\033[0m"
+
+all: $(NAME)
 
 $(OBJ_PATH)%.o: $(SRC_STR_PATH)%.c
 	@mkdir -p obj
@@ -184,9 +192,11 @@ $(OBJ_PATH)%.o: $(SRC_OUT_PATH)%.c
 	@gcc $(FLAG) -c -I $(INC) $< -o $@
 
 clean:
-	/bin/rm -f $(OBJ)
+	@/bin/rm -f $(OBJ)
+	@echo "\033[34mlibft obj \033[32mcleaned\033[0m"
 
 fclean: clean
-	/bin/rm -f $(NAME)
+	@/bin/rm -f $(NAME)
+	@echo "\033[34m$(NAME) \033[32mremoved\033[0m"
 
 re: fclean all

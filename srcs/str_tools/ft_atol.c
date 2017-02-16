@@ -1,26 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
+/*   ft_atol.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: epillot <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/09 14:04:53 by epillot           #+#    #+#             */
-/*   Updated: 2017/01/31 18:17:34 by epillot          ###   ########.fr       */
+/*   Created: 2017/01/25 17:32:41 by epillot           #+#    #+#             */
+/*   Updated: 2017/01/25 17:33:27 by epillot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstdelone(t_list **alst, void (*del)(void *, size_t))
+long	ft_atol(const char *str)
 {
-	t_list	*elem;
+	int		i;
+	long	nbr;
+	int		negative;
 
-	if (*alst)
+	nbr = 0;
+	negative = 0;
+	i = 0;
+	while (ft_isspace(str[i]))
+		i++;
+	if (str[i] == '-')
+		negative = 1;
+	if (str[i] == '+' || str[i] == '-')
+		i++;
+	while (str[i] && ft_isdigit(str[i]))
 	{
-		elem = *alst;
-		(*del)(elem->content, elem->content_size);
-		free(*alst);
-		*alst = NULL;
+		nbr *= 10;
+		nbr += str[i] - '0';
+		i++;
 	}
+	return (negative == 1 ? -nbr : nbr);
 }
